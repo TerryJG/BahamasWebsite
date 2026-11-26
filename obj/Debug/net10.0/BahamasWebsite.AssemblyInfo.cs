@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BahamasWebsite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69e6deeaa73e5c2c486f693f7708381c602a0da8")]
 [assembly: System.Reflection.AssemblyProductAttribute("BahamasWebsite")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BahamasWebsite")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
