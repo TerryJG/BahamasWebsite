@@ -1,0 +1,7 @@
+nav ::deep a {
+    color: inherit;
+}
+
+nav ::deep a.active {
+    font-weight: bold;
+}

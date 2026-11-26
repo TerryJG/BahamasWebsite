@@ -1,0 +1,86 @@
+﻿@page "/"
+
+<PageTitle>Bahamas Website</PageTitle>
+
+<header id="header" class="d-flex flex-column justify-content-center align-items-center text-center rounded-4 fg-white px-6 py-12 my-8">
+    <h1 class="fs-5xl fw-bold font-header">Welcome to The Bahamas!</h1>
+    <p class="header-intro fs-lg mb-8">Discover beautiful beaches, amazing islands and rich culture on the luxurious, tropical islands of The Bahamas. Indulge in the vibrant nightlife, explore historic sites, and experience the warm hospitality of Bahamians.</p>
+    <section class="feature-list mb-8">
+        <div class="d-flex flex-column align-items-center text-center">
+            <i class="fa-solid fa-utensils fs-2xl mb-2"></i>
+            <p class="fs-xl fw-bold mb-0">Amazing Food</p>
+        </div>
+        <div class="d-flex flex-column align-items-center text-center">
+            <i class="fa-solid fa-user-check fs-2xl mb-2"></i>
+            <p class="fs-xl fw-bold mb-0">Great Culture</p>
+        </div>
+        <div class="d-flex flex-column align-items-center text-center">
+            <i class="fa-solid fa-location-dot fs-2xl mb-2"></i>
+            <p class="fs-xl fw-bold mb-0">Historic Landscapes</p>
+        </div>
+    </section>
+    <a
+        href="islands"
+        class="btn theme-warning btn-solid btn-styled fg-white"
+        style="border-radius: 0px;">
+        Explore Our Islands
+    </a>
+</header>
+
+<section>
+    <div class="text-center">
+        <h2 class="text-center pb-4">Featured Destinations</h2>
+        <p>You can check out some of our most visited locations in The Bahamas:</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        @foreach (var island in islands)
+        {
+            <div class="card island-card rounded-4 overflow-hidden" style="cursor: pointer;">
+                <img
+                    src="@island.Image"
+                    class="card-img island-image"
+                    alt="@island.Name" />
+                <div class="card-img-overlay island-overlay d-flex flex-column justify-content-center align-items-center text-center fg-white">
+                    <h4 class="fs-3xl fw-bold mb-2">
+                    @island.Name
+                    </h4>
+                    <p class="fs-md mb-4">
+                    @island.Description
+                    </p>
+                    <a href="islands" class="btn btn-sm theme-warning btn-solid btn-styled fg-white">
+                        Visit Island
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<footer id="footer" class="bg-subtle-primary d-flex justify-content-center align-items-center text-center fg-white fs-md px-12 py-3 mt-8">
+    <p class="mb-0">2026 Discover Bahamas</p>
+</footer>
+
+@code
+{
+    private readonly List<Island> islands =
+            [
+                new Island
+        {
+            Name = "New Providence",
+            Description = "Capital of Nassau",
+            Image = "https://dynamic-media.tacdn.com/media/photo-o/30/4a/da/74/caption.jpg?w=2400&h=-1&s=1"
+        },
+        new Island
+        {
+            Name = "Abaco",
+            Description = "Great for boating and sailing",
+            Image = "https://res.cloudinary.com/enchanting/q_70,f_auto,w_1024,h_576,c_fit/sunsail-web/2023/10/Sunsail-Abacos-BB-Paul-C_MOD.jpg"
+        },
+                new Island
+        {
+            Name = "Cat Island",
+            Description = "Doesnt have cats but great history",
+            Image = "https://tempo.cdn.tambourine.com/windsong/media/cache/bmot-catisland-content-beach-12-65660d868babb-765x708.jpg"
+        },
+    ];
+}

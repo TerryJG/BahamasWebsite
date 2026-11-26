@@ -1,0 +1,40 @@
+@page "/islands"
+
+<PageTitle>Our Islands</PageTitle>
+
+<section id="islands-header" class="d-flex flex-column justify-content-center align-items-center text-center rounded-4 fg-white px-6 py-12 my-8">
+    <h1 class="fs-5xl font-header">Our Islands</h1>
+    <p class="fs-lg mb-8">The Bahamas is made up of over 700 islands and cays. Here are some of the best to visit.</p>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+        @foreach (var island in IslandData.All)
+        {
+            <a href="islands#@island.Id" class="btn btn-sm theme-warning btn-solid btn-styled fg-white rounded-pill">@island.Name</a>
+        }
+    </div>
+</section>
+
+@for (var i = 0; i < IslandData.All.Count; i++)
+{
+    var island = IslandData.All[i];
+    var imageSide = i % 2 == 1 ? "md:order-last" : "";
+
+    <article id="@island.Id" class="grid grid-cols-1 md:grid-cols-2 gap-8 align-items-center my-12">
+        <img src="@island.Image" class="w-100 rounded-4 shadow object-fit-cover island-photo @imageSide" alt="@island.Name" />
+
+        <div>
+            <span class="badge theme-warning rounded-pill mb-3">Island @(i + 1) of @IslandData.All.Count</span>
+            <h2 class="fs-3xl font-header mb-2">@island.Name</h2>
+            <p class="fs-lg fg-secondary mb-6">@island.Description</p>
+
+            <ul class="list-unstyled mb-0">
+                @foreach (var highlight in island.Highlights)
+                {
+                    <li class="mb-3">
+                        <i class="fa-solid fa-check fg-warning me-2"></i>@highlight
+                    </li>
+                }
+            </ul>
+        </div>
+    </article>
+}

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "43H+ZTSHiO8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Terrance\\Documents\\.Assignments\\.NET CSharp\\BahamasWebsite\\BahamasWebsite.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Terrance\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.12\\microsoft.aspnetcore.app.internal.assets.10.0.12.nupkg.sha512"
+  ],
+  "logs": []
+}

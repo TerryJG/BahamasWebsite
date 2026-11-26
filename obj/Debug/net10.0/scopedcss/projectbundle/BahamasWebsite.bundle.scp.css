@@ -1,0 +1,272 @@
+/* /Components/Layout/MainLayout.razor.rz.scp.css */
+#blazor-error-ui[b-plg9a5f5kt] {
+  color-scheme: light only;
+  background: lightyellow;
+  bottom: 0;
+  box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  display: none;
+  left: 0;
+  padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+#blazor-error-ui .dismiss[b-plg9a5f5kt] {
+  cursor: pointer;
+  position: absolute;
+  right: 0.75rem;
+  top: 0.5rem;
+}
+/* /Components/Layout/NavMenu.razor.rz.scp.css */
+nav[b-1n29xtnkqg]  a {
+    color: inherit;
+}
+
+nav[b-1n29xtnkqg]  a.active {
+    font-weight: bold;
+}
+/* /Components/Layout/ReconnectModal.razor.rz.scp.css */
+.components-reconnect-first-attempt-visible[b-dth6kf5jn4],
+.components-reconnect-repeated-attempt-visible[b-dth6kf5jn4],
+.components-reconnect-failed-visible[b-dth6kf5jn4],
+.components-pause-visible[b-dth6kf5jn4],
+.components-resume-failed-visible[b-dth6kf5jn4],
+.components-rejoining-animation[b-dth6kf5jn4] {
+    display: none;
+}
+
+#components-reconnect-modal.components-reconnect-show .components-reconnect-first-attempt-visible[b-dth6kf5jn4],
+#components-reconnect-modal.components-reconnect-show .components-rejoining-animation[b-dth6kf5jn4],
+#components-reconnect-modal.components-reconnect-paused .components-pause-visible[b-dth6kf5jn4],
+#components-reconnect-modal.components-reconnect-resume-failed .components-resume-failed-visible[b-dth6kf5jn4],
+#components-reconnect-modal.components-reconnect-retrying[b-dth6kf5jn4],
+#components-reconnect-modal.components-reconnect-retrying .components-reconnect-repeated-attempt-visible[b-dth6kf5jn4],
+#components-reconnect-modal.components-reconnect-retrying .components-rejoining-animation[b-dth6kf5jn4],
+#components-reconnect-modal.components-reconnect-failed[b-dth6kf5jn4],
+#components-reconnect-modal.components-reconnect-failed .components-reconnect-failed-visible[b-dth6kf5jn4] {
+    display: block;
+}
+
+
+#components-reconnect-modal[b-dth6kf5jn4] {
+    background-color: white;
+    width: 20rem;
+    margin: 20vh auto;
+    padding: 2rem;
+    border: 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: display 0.5s allow-discrete, overlay 0.5s allow-discrete;
+    animation: components-reconnect-modal-fadeOutOpacity-b-dth6kf5jn4 0.5s both;
+    &[open]
+
+{
+    animation: components-reconnect-modal-slideUp-b-dth6kf5jn4 1.5s cubic-bezier(.05, .89, .25, 1.02) 0.3s, components-reconnect-modal-fadeInOpacity-b-dth6kf5jn4 0.5s ease-in-out 0.3s;
+    animation-fill-mode: both;
+}
+
+}
+
+#components-reconnect-modal[b-dth6kf5jn4]::backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: components-reconnect-modal-fadeInOpacity-b-dth6kf5jn4 0.5s ease-in-out;
+    opacity: 1;
+}
+
+@keyframes components-reconnect-modal-slideUp-b-dth6kf5jn4 {
+    0% {
+        transform: translateY(30px) scale(0.95);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes components-reconnect-modal-fadeInOpacity-b-dth6kf5jn4 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes components-reconnect-modal-fadeOutOpacity-b-dth6kf5jn4 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.components-reconnect-container[b-dth6kf5jn4] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#components-reconnect-modal p[b-dth6kf5jn4] {
+    margin: 0;
+    text-align: center;
+}
+
+#components-reconnect-modal button[b-dth6kf5jn4] {
+    border: 0;
+    background-color: #6b9ed2;
+    color: white;
+    padding: 4px 24px;
+    border-radius: 4px;
+}
+
+    #components-reconnect-modal button:hover[b-dth6kf5jn4] {
+        background-color: #3b6ea2;
+    }
+
+    #components-reconnect-modal button:active[b-dth6kf5jn4] {
+        background-color: #6b9ed2;
+    }
+
+.components-rejoining-animation[b-dth6kf5jn4] {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+    .components-rejoining-animation div[b-dth6kf5jn4] {
+        position: absolute;
+        border: 3px solid #0087ff;
+        opacity: 1;
+        border-radius: 50%;
+        animation: components-rejoining-animation-b-dth6kf5jn4 1.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
+
+        .components-rejoining-animation div:nth-child(2)[b-dth6kf5jn4] {
+            animation-delay: -0.5s;
+        }
+
+@keyframes components-rejoining-animation-b-dth6kf5jn4 {
+    0% {
+        top: 40px;
+        left: 40px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    4.9% {
+        top: 40px;
+        left: 40px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    5% {
+        top: 40px;
+        left: 40px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0px;
+        left: 0px;
+        width: 80px;
+        height: 80px;
+        opacity: 0;
+    }
+}
+/* /Components/Pages/Home.razor.rz.scp.css */
+#header[b-rpjv2uryjj] {
+    min-height: 28rem;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url(https://www.swimmingwithpigs.com/wp-content/uploads/2025/03/must-do-things-in-nassau-to-exuma.jpg) center / cover no-repeat;
+}
+
+.header-intro[b-rpjv2uryjj] {
+    max-width: 48rem;
+}
+
+/* Equal-width columns so each icon sits in the exact center of its label,
+   no matter how long the label text is */
+.feature-list[b-rpjv2uryjj] {
+    display: grid;
+    grid-template-columns: repeat(3, 12rem);
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+@media (max-width: 40rem) {
+    .feature-list[b-rpjv2uryjj] {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.island-image[b-rpjv2uryjj] {
+    height: 18rem;
+    object-fit: cover;
+}
+
+.island-overlay[b-rpjv2uryjj] {
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.island-card[b-rpjv2uryjj] {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.island-card:hover[b-rpjv2uryjj] {
+    transform: translateY(-8px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Cancel out <main>'s px-12 (3rem) padding so the footer spans the page */
+#footer[b-rpjv2uryjj] {
+    margin-inline: -3rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .island-card[b-rpjv2uryjj] {
+        transition: none;
+    }
+
+    .island-card:hover[b-rpjv2uryjj] {
+        transform: none;
+    }
+}
+/* /Components/Pages/Islands.razor.rz.scp.css */
+#islands-header[b-omqc1zksuk] {
+    min-height: 20rem;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Exuma_tourism.jpg/1280px-Exuma_tourism.jpg) center / cover no-repeat;
+}
+
+.island-photo[b-omqc1zksuk] {
+    height: 22rem;
+}
+
+/* Attractions in two equal columns, one column on narrow screens */
+.attractions-grid[b-omqc1zksuk] {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem 1.5rem;
+}
+
+@media (max-width: 40rem) {
+    .attractions-grid[b-omqc1zksuk] {
+        grid-template-columns: 1fr;
+    }
+}

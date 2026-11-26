@@ -1,0 +1,60 @@
+#header[b-rpjv2uryjj] {
+    min-height: 28rem;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url(https://www.swimmingwithpigs.com/wp-content/uploads/2025/03/must-do-things-in-nassau-to-exuma.jpg) center / cover no-repeat;
+}
+
+.header-intro[b-rpjv2uryjj] {
+    max-width: 48rem;
+}
+
+/* Equal-width columns so each icon sits in the exact center of its label,
+   no matter how long the label text is */
+.feature-list[b-rpjv2uryjj] {
+    display: grid;
+    grid-template-columns: repeat(3, 12rem);
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+@media (max-width: 40rem) {
+    .feature-list[b-rpjv2uryjj] {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.island-image[b-rpjv2uryjj] {
+    height: 18rem;
+    object-fit: cover;
+}
+
+.island-overlay[b-rpjv2uryjj] {
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.island-card[b-rpjv2uryjj] {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.island-card:hover[b-rpjv2uryjj] {
+    transform: translateY(-8px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Cancel out <main>'s px-12 (3rem) padding so the footer spans the page */
+#footer[b-rpjv2uryjj] {
+    margin-inline: -3rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .island-card[b-rpjv2uryjj] {
+        transition: none;
+    }
+
+    .island-card:hover[b-rpjv2uryjj] {
+        transform: none;
+    }
+}

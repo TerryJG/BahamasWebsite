@@ -1,0 +1,182 @@
+@page "/islands"
+
+<PageTitle>Our Islands</PageTitle>
+
+
+<section id="islands-header" class="d-flex flex-column justify-content-center align-items-center text-center rounded-4 fg-white px-6 py-12 my-8">
+    <h1 class="fs-5xl font-header">The Islands of the Bahamas</h1>
+</section>
+
+@for (var i = 0; i < IslandData.All.Count; i++)
+{
+    var island = IslandData.All[i];
+
+    <article id="island-@i" class="grid grid-cols-2 align-items-center my-12">
+        <img src="@island.Image" class="w-100 rounded-4 object-fit-cover island-photo" alt="@island.Name" />
+
+        <div>
+            <h2 class="fs-3xl font-header mb-2">@island.Name</h2>
+            @if (!string.IsNullOrEmpty(island.Capital))
+            {
+                <p class="fs-md fw-bold mb-2">
+                    <i class="fa-solid fa-map-location-dot fg-warning me-2"></i>Capital: @island.Capital
+                </p>
+            }
+            <p class="fs-lg fg-secondary mb-6">@island.Description</p>
+
+            <ul class="attractions-grid list-unstyled mb-0">
+                <p class="fs-md fw-bold mb-2">
+                </p>
+            </ul>
+            <ul class="attractions-grid list-unstyled mb-0">
+              <p>Attractions</p>
+                @foreach (var attraction in island.Attractions)
+                {
+                    <li>
+                        <i class="fa-solid fa-street-view fg-warning me-2"></i>@attraction
+                    </li>
+                }
+            </ul>
+        </div>
+    </article>
+}
+
+@code {
+  public static class IslandData
+  {
+    public static List<Island> All { get; } =
+  [
+      new Island
+    {
+      Name = "New Providence",
+      Capital = "Nassau",
+      Description = "New Providence is home of Nassau, the capital city of The Bahamas. The heart of Bahamian culture, food, and attractions live here on New Providence, with unlimited opportunities to enjoy your stay.",
+      Image = "https://dynamic-media.tacdn.com/media/photo-o/30/4a/da/74/caption.jpg?w=2400&h=-1&s=1",
+      Attractions = new string[]
+      {
+        "Atlantis Paradise Island",
+        "Queen's Staircase",
+        "Fort Fincastle",
+        "The National Art Gallery of The Bahamas",
+        "Junkanoo Beach"
+      }
+    },
+    new Island
+    {
+      Name = "Abaco",
+      Capital = "Marsh Harbour",
+      Description = "A chain of islands and cays in the northern Bahamas, popular for boating and sailing",
+      Image = "https://res.cloudinary.com/enchanting/q_70,f_auto,w_1024,h_576,c_fit/sunsail-web/2023/10/Sunsail-Abacos-BB-Paul-C_MOD.jpg",
+      Attractions = new string[] {
+        ""
+        
+      }
+    },
+    new Island
+    {
+      Name = "Eleuthera",
+      Capital = "Governor's Harbour",
+      Description = "A long, narrow island about 110 miles long, next to Harbour Island and its famous pink sand beaches",
+      Image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV65bhOPlGew2dI60MnSaqzmVGJxHVOHD6-hYoUHMs2A&s=10",
+    },
+    new Island
+    {
+      Name = "Grand Bahama",
+      Capital = "West End",
+      Description = "Home of Freeport, the second-largest city in The Bahamas, and Lucayan National Park",
+      Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/LucayanNationalPark.JPG/1280px-LucayanNationalPark.JPG",
+    },
+    new Island
+    {
+      Name = "Exuma",
+      Capital = "George Town",
+      Description = "A chain of about 365 cays and islands, home to the famous swimming pigs of Big Major Cay",
+      Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Exuma_tourism.jpg/1280px-Exuma_tourism.jpg",
+    },
+    new Island
+    {
+      Name = "Andros",
+      Capital = "Andros Town",
+      Description = "The largest island in The Bahamas, known as the bonefishing capital of the world",
+      Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Andros_island2978.jpg/1280px-Andros_island2978.jpg",
+    },
+    new Island
+    {
+      Name = "Berry Islands",
+      Capital = "Bullocks Harbour",
+      Description = "A chain of about 30 islands and over 100 small cays, known for deep-sea fishing",
+      Image = "https://upload.wikimedia.org/wikipedia/commons/2/2c/Great_Harbor_Cay_horseshoe.jpg",
+    },
+    new Island
+    {
+      Name = "Bimini",
+      Capital = "Alice Town",
+      Description = "About 50 miles off Florida, making it the closest Bahamian island to the United States",
+      Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Bimini_island.jpg/1280px-Bimini_island.jpg",
+    },
+    new Island
+    {
+      Name = "Cat Island",
+      Capital = "Arthur's Town",
+      Description = "Home of Mount Alvernia, the highest point in The Bahamas at 206 feet (63 m)",
+      Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Cat_Island%2C_Bahamas.JPG/1280px-Cat_Island%2C_Bahamas.JPG",
+    },
+    new Island
+    {
+      Name = "Long Island",
+      Capital = "Clarence Town",
+      Description = "Home of Dean's Blue Hole, one of the deepest blue holes in the world",
+      Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Dean_Blue_Hole_Long_Island_Bahamas_20110210.JPG/1280px-Dean_Blue_Hole_Long_Island_Bahamas_20110210.JPG",
+    },
+    new Island
+    {
+      Name = "San Salvador",
+      Capital = "Cockburn Town",
+      Description = "Widely believed to be where Christopher Columbus first landed in the Americas in 1492",
+      Image = "https://upload.wikimedia.org/wikipedia/commons/4/41/SanSalvador_from_lighthouse1.JPG",
+    },
+    new Island
+    {
+      Name = "Inagua",
+      Capital = "Matthew Town",
+      Description = "Home of Inagua National Park, the world's largest breeding colony of West Indian flamingos",
+      Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/NorthShoreGreatInagua.jpg/1280px-NorthShoreGreatInagua.jpg",
+    },
+    new Island
+    {
+      Name = "Mayaguana",
+      Capital = "Abraham's Bay",
+      Description = "The easternmost and one of the least developed islands of The Bahamas",
+      Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Mayaguana_IMGP0335.jpg/1280px-Mayaguana_IMGP0335.jpg",
+    },
+    new Island
+    {
+      Name = "Acklins",
+      Capital = "Spring Point",
+      Description = "On the shores of the shallow Bight of Acklins, famous for bonefishing",
+      Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Acklins.JPG/1280px-Acklins.JPG",
+    },
+    new Island
+    {
+      Name = "Crooked Island",
+      Capital = "Colonel Hill",
+      Description = "Home of the Bird Rock Lighthouse, which guards the Crooked Island Passage",
+      Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/American_Flamingo_%28Phoenicopterus_ruber%29%2C_Long_Cay%2C_Crooked_Island%2C_Bahamas_2.jpg/1280px-American_Flamingo_%28Phoenicopterus_ruber%29%2C_Long_Cay%2C_Crooked_Island%2C_Bahamas_2.jpg",
+    },
+    new Island
+    {
+      Name = "Rum Cay",
+      Capital = "Port Nelson",
+      Description = "A quiet island with a single settlement, which Columbus named Santa María de la Concepción",
+      Image = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Rum_Cay%2C_The_Bahamas.jpg/1280px-Rum_Cay%2C_The_Bahamas.jpg",
+    },
+    new Island
+    {
+      Name = "Ragged Island",
+      Capital = "Duncan Town",
+      Description = "A remote island at the southern end of the Jumentos Cays, once known for its salt industry",
+      Image = "https://upload.wikimedia.org/wikipedia/commons/d/d0/RaggedIslands.jpg",
+    },
+  ];
+}
+}
